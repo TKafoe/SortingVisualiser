@@ -1,5 +1,6 @@
 import p5 from 'p5';
 import { MergeSort } from '../sorting_algorithms/MergeSort';
+import {InsertionSort} from "../sorting_algorithms/InsertionSort";
 
 export class BarSketch {
     constructor(id, sortingAlgorithm) {
@@ -18,14 +19,14 @@ export class BarSketch {
             p.draw = () => {
                 bars = steps[i];
                 const barSize = p.height / (bars.length + 10);
-                if (p.millis() - this.startTime > 50 && i < steps.length - 1) {
+                if (p.millis() - this.startTime > 200 && i < steps.length - 1) {
                     this.startTime = p.millis();
                     i++;
                 }
 
-                if (i === steps.length - 1 && p.millis() - this.startTime < 1000) {
+                if (i === steps.length - 1 && p.millis() - this.startTime < 1500) {
                     p.fill(0, 255, 0)
-                } else if (i === steps.length - 1 && p.millis() - this.startTime >= 1000) {
+                } else if (i === steps.length - 1 && p.millis() - this.startTime >= 1500) {
                     this.startTime = p.millis();
                     i = 0;
                 } else {
@@ -47,8 +48,13 @@ export class BarSketch {
 const getSortingAlgorithm = (sortingAlgorithm) => {
     switch(sortingAlgorithm) {
         case "mergeSort": {
-                return new MergeSort();
-            break;
+            return new MergeSort();
+        }
+        case "insertionSort": {
+            return new InsertionSort();
+        }
+        default: {
+            return null;
         }
     }
 }

@@ -5,12 +5,12 @@ import "./SketchComponent.css"
 
 export class SortingSketchComponent extends React.Component {
     componentDidMount() {
-        new BarSketch("sketch1", "mergeSort");
+        new BarSketch(`${this.props.strategy}-sketch`, this.props.strategy);
     }
 
     render() {
         return (
-            <div className="sketch" id="sketch1"/>
+            <div className="sketch" id={`${this.props.strategy}-sketch`} />
         )
     }
 }

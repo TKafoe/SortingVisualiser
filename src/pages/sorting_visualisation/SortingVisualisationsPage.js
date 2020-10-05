@@ -12,8 +12,14 @@ export class SortingVisualisationsPage extends React.Component {
                 <Tabs defaultActiveKey="1">
                     <TabPane tab="MergeSort" key="1">
                         <Content style={{ padding: '0 50px' }}>
-                                <Divider>A visualisation to show the merge sort algorithm.</Divider>
-                                <SortingSketchComponent />
+                            <Divider>A visualisation to show the merge sort algorithm.</Divider>
+                            <SortingSketchComponent strategy="mergeSort"/>
+                        </Content>
+                    </TabPane>
+                    <TabPane tab="InsertionSort" key="2">
+                        <Content style={{ padding: '0 50px' }}>
+                            <Divider>A visualisation to show the insertion sort algorithm.</Divider>
+                            <SortingSketchComponent strategy="insertionSort"/>
                         </Content>
                     </TabPane>
                 </Tabs>
