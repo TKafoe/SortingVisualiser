@@ -12,7 +12,7 @@ export class BarSketch {
 
         new p5(p => {
             p.setup = () => {
-                p.createCanvas(1600, 400);
+                p.createCanvas(document.getElementById(id).offsetWidth, 400);
                 this.startTime = p.millis();
             }
 
