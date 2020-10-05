@@ -19,7 +19,7 @@ export class BarSketch {
             p.draw = () => {
                 bars = steps[i];
                 const barSize = p.height / (bars.length + 10);
-                if (p.millis() - this.startTime > 200 && i < steps.length - 1) {
+                if (p.millis() - this.startTime > 50 && i < steps.length - 1) {
                     this.startTime = p.millis();
                     i++;
                 }
