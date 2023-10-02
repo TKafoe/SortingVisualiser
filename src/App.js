@@ -8,17 +8,15 @@ const { Header, Content, Footer } = Layout;
 
 function App() {
   return (
-      <Layout className="layout">
+      <Layout style={{height:"100vh"}} className="layout">
           <Header>
               <div className="logo" />
-              <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-                  <Menu.Item key="1">Sorting Visualisations</Menu.Item>
-              </Menu>
+              <h1 style={{color: "white"}}>Sorting Visualisations</h1>
           </Header>
-          <Content style={{ padding: '0 50px' }}>
+          <Content id="bar-graph-content" style={{ padding: '0 50px'}}>
             <SortingVisualisationsPage />
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Tom Kafoe 2020</Footer>
+          <Footer style={{ textAlign: 'center', position: "absolute", bottom: 0, left: 0, right: 0 }}>Tom Kafoe 2020</Footer>
       </Layout>
   );
 }

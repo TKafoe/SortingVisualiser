@@ -12,8 +12,12 @@ export class BarSketch {
 
         new p5(p => {
             p.setup = () => {
-                p.createCanvas(document.getElementById(id).offsetWidth, 400);
+                p.createCanvas(document.getElementById("bar-graph-content").offsetWidth * 0.8, document.getElementById("bar-graph-content").offsetHeight * 0.6);
                 this.startTime = p.millis();
+            }
+
+            p.windowResized = () => {
+                p.resizeCanvas(document.getElementById("bar-graph-content").offsetWidth * 0.8, document.getElementById("bar-graph-content").offsetHeight * 0.6);
             }
 
             p.draw = () => {
@@ -38,7 +42,7 @@ export class BarSketch {
                     const height = bar * barSize;
                     const widthBarSpace = p.width / bars.length;
 
-                    p.rect(index * widthBarSpace, 390 - height, widthBarSpace, height);
+                    p.rect(index * widthBarSpace, p.height - height, widthBarSpace, height);
                 })
             }
         }, id);

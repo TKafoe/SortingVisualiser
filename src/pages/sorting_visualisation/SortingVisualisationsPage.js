@@ -9,15 +9,15 @@ export class SortingVisualisationsPage extends React.Component {
     render() {
         return (
             <div className="site-layout-content">
-                <Tabs defaultActiveKey="1">
+                <Tabs defaultActiveKey="1" centered>
                     <TabPane tab="MergeSort" key="1">
-                        <Content style={{ padding: '0 50px' }}>
+                        <Content style={{align: "center"}}>
                             <Divider>A visualisation to show the merge sort algorithm.</Divider>
                             <SortingSketchComponent strategy="mergeSort"/>
                         </Content>
                     </TabPane>
                     <TabPane tab="InsertionSort" key="2">
-                        <Content style={{ padding: '0 50px' }}>
+                        <Content>
                             <Divider>A visualisation to show the insertion sort algorithm.</Divider>
                             <SortingSketchComponent strategy="insertionSort"/>
                         </Content>
